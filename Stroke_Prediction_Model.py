@@ -56,8 +56,8 @@ def main():
     
     gender = st.text_input("What is the Gender (0 - Female and 1 - male)")
     age = st.text_input("Enter the age")
-    hypertension = st.text_input("0 for -ve and 1 for +ve")
-    heart_disease = st.text_input("0 for -ve and 1 for +ve")
+    hypertension = st.text_input(" hypertension 0 for -ve and 1 for +ve")
+    heart_disease = st.text_input("0 for has and 1 for not ")
     ever_married = st.text_input("0 for No and 1 for Yes")
     work_type = st.text_input("0 for private and 1 for self employded, 2 for children, 3 for gov job, and 4 for Never_worked")
     Residence_type = st.text_input ("0 for ubarn  and 1 for rural")
