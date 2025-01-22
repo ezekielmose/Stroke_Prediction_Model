@@ -75,3 +75,7 @@ def main():
         diagnosis1 = strock_predictor ([gender, age, hypertension, heart_disease, ever_married, work_type, Residence_type, avg_glucose_level, bmi,smoking_status])
         
     st.success(diagnosis1)
+
+
+if __name__ == '__main__':
+    main()
