@@ -38,7 +38,7 @@ def strock_predictor (input_data):
    
    input_data_reshaped = input_data_to_array.reshape(1,-1)
    
-   predictions = loaded_model.predict(input_data_reshaped) 
+   predictions = loaded_model.PREDICT(input_data_reshaped)
    
    
    
@@ -75,6 +75,3 @@ def main():
         diagnosis1 = strock_predictor ([gender, age, hypertension, heart_disease, ever_married, work_type, Residence_type, avg_glucose_level, bmi,smoking_status])
         
     st.success(diagnosis1)
-
-if __name__ == '__main__':
-    main()
