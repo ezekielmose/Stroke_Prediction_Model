@@ -51,7 +51,7 @@ def strock_predictor (input_data):
         
         
         
-def mains():
+def main():
     st.title ("Stroke Prediction Model")
     
     gender = st.text_input("What is the Gender (0 - Female and 1 - male)")
@@ -75,3 +75,6 @@ def mains():
         diagnosis1 = strock_predictor ([gender, age,hypertension,heart_disease,ever_married,work_type,Residence_type,avg_glucose_level,bmi,smoking_status])
         
     st.success(diagnosis1)
+
+if __name__ == '__main__':
+    main()
