@@ -27,7 +27,7 @@ with open("strock_model.sav", 'wb') as f:
 
 with open("strock_model.sav", 'rb') as f:
     
-    now_loaded_model = pickle.load(f)
+    loaded_model = pickle.load(f)
     
     
     
@@ -38,7 +38,7 @@ def strock_predictor (input_data):
    
    input_data_reshaped = input_data_to_array.reshape(1,-1)
    
-   predictions = now_loaded_model.predict(input_data_reshaped)
+   predictions = loaded_model.predict(input_data_reshaped) 
    
    
    
