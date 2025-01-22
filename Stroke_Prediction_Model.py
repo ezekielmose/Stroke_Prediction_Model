@@ -56,14 +56,14 @@ def main():
     
     gender = st.text_input("What is the Gender (0 - Female and 1 - male)")
     age = st.text_input("Enter the age")
-    hypertension = st.text_input(" hypertension 0 for -ve and 1 for +ve")
-    heart_disease = st.text_input("0 for has and 1 for not ")
-    ever_married = st.text_input("0 for No and 1 for Yes")
-    work_type = st.text_input("0 for private and 1 for self employded, 2 for children, 3 for gov job, and 4 for Never_worked")
-    Residence_type = st.text_input ("0 for ubarn  and 1 for rural")
-    avg_glucose_level = ("Enter any value as per the measurements")
-    bmi =st.text_input ("Enter any value as per the measurements")
-    smoking_status =st.text_input("0 for never smoked, 1 for Unknown, 2 for formerly smoked, 3 for smokes")
+    hypertension = st.text_input(" Hypertension 0 for -ve and 1 for +ve")
+    heart_disease = st.text_input(" Heart_disease 0 for has and 1 for not ")
+    ever_married = st.text_input(" Ever_married 0 for No and 1 for Yes")
+    work_type = st.text_input(" Work_type 0 for private and 1 for self employded, 2 for children, 3 for gov job, and 4 for Never_worked")
+    Residence_type = st.text_input ("Residence_type 0 for ubarn  and 1 for rural")
+    avg_glucose_level = ("Enter any value of (avg_glucose_level) as per the measurements")
+    bmi =st.text_input ("Enter any value of (BMI) as per the measurements")
+    smoking_status =st.text_input("Smoking_status 0 for never smoked, 1 for Unknown, 2 for formerly smoked, 3 for smokes")
  					
    
     
