@@ -72,7 +72,7 @@ def main():
     
     
     if st.button ("CLICK HERE TO PREDICT"):
-        diagnosis1 = strock_predictor ([gender, age,hypertension,heart_disease,ever_married,work_type,Residence_type,avg_glucose_level,bmi,smoking_status])
+        diagnosis1 = strock_predictor ([gender, age, hypertension, heart_disease, ever_married, work_type, Residence_type, avg_glucose_level, bmi,smoking_status])
         
     st.success(diagnosis1)
 
