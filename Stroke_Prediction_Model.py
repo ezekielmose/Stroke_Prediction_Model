@@ -21,7 +21,9 @@ loaded_model = requests.get(url)
 
 with open("strock_model.sav", 'wb') as f:
     
-    pickle.dump(loaded_model, f)
+    #pickle.dump(loaded_model, f)
+
+    f.write(loaded_model.content)
     
 # loading the saved model from the tempolary file
 
@@ -29,13 +31,10 @@ with open("strock_model.sav", 'rb') as f:
     
     loaded_model = pickle.load(f)
     
-    
-    
 def strock_predictor (input_data):
     
    input_data_to_array =  np.array(input_data)
-   
-   
+      
    input_data_reshaped = input_data_to_array.reshape(1, -1)
    
    prediction = loaded_model.predict(input_data_reshaped)
@@ -47,9 +46,7 @@ def strock_predictor (input_data):
        
    else:
         print("The patient is most likely to suffer from strock")
-        
-        
-        
+                
         
 def main():
     st.title ("Stroke Prediction Model")
@@ -66,7 +63,6 @@ def main():
     smoking_status =st.text_input("Smoking_status 0 for never smoked, 1 for Unknown, 2 for formerly smoked, 3 for smokes")
  					
    
-    
    
     diagnosis1 = ""
     
