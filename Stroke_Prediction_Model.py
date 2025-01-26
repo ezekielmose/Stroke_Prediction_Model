@@ -3,20 +3,25 @@ import pandas as pd
 import streamlit as st
 import requests
 import pickle
-url = "https://github.com/ezekielmose/Stroke_Prediction_Model/blob/main/strock_model.sav"
+url = "https://raw.githubusercontent.com/ezekielmose/Stroke_Prediction_Model/main/strock_model.sav"
+# Download the file
 loaded_model = requests.get(url)
-#save the loaded model to a tempolary file
-with open("strock_model.sav", 'wb') as f:
-    pickle.dump(loaded_model, f)
-    #pickle.dump(loaded_model, f)
-    #f.write(loaded_model.content)   
-# loading the saved model from the tempolary file
-with open("strock_model.sav", 'rb') as f: 
+
+# Save the downloaded content to a temporary file
+with open('trained_model1.sav', 'wb') as f:
+    f.write(loaded_model.content)
+
+
+# Load the saved model
+with open('trained_model1.sav', 'rb') as f:
     loaded_model = pickle.load(f)
+    
 def strock_predictor (input_data):
    input_data_to_array =  np.array(input_data)
    input_data_reshaped = input_data_to_array.reshape(1, -1)
-   prediction = loaded_model.predict(input_data_reshaped)   
+
+   
+   prediction = loaded_model.predict(input_data_reshaped)
    if prediction [0]==0:
        print("The patient is not at risk") 
    else:
