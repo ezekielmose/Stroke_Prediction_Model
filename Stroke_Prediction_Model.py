@@ -9,7 +9,7 @@ loaded_model = requests.get(url)
 
 # Save the downloaded content to a temporary file
 with open('trained_model1.sav', 'wb') as f:
-    f.write(loaded_model.content)
+    pickle.dump(loaded_model, f)
 
 
 # Load the saved model
