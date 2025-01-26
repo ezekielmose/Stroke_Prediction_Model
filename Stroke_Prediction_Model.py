@@ -75,5 +75,6 @@ def main():
     
     
 # this is to allow our web app to run from anaconda command prompt where the cmd takes the main() only and runs the code
+    
 if __name__ == '__main__':
     main()
