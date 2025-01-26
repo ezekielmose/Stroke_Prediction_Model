@@ -20,10 +20,10 @@ loaded_model = requests.get(url)
 #save the loaded model to a tempolary file
 
 with open("strock_model.sav", 'wb') as f:
-    
+    pickle.dump(loaded_model, f)
     #pickle.dump(loaded_model, f)
 
-    f.write(loaded_model.content)
+    #f.write(loaded_model.content)
     
 # loading the saved model from the tempolary file
 
