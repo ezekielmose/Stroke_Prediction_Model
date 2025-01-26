@@ -11,10 +11,10 @@ import streamlit as st
 import requests
 import pickle
 
-urls = "https://github.com/ezekielmose/Stroke_Prediction_Model/blob/main/strock_model.sav"
+url = "https://github.com/ezekielmose/Stroke_Prediction_Model/blob/main/strock_model.sav"
 
 
-loaded_model = requests.get(urls)
+loaded_model = requests.get(url)
 
 
 #save the loaded model to a tempolary file
@@ -36,7 +36,7 @@ def strock_predictor (input_data):
    input_data_to_array =  np.array(input_data)
    
    
-   input_data_reshaped = input_data_to_array.reshape(1,-1)
+   input_data_reshaped = input_data_to_array.reshape(1, -1)
    
    prediction = loaded_model.predict(input_data_reshaped)
    
