@@ -1,56 +1,28 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jan 22 21:56:46 2025
-
-@author: Alvine
-"""
-
 import numpy as np
 import pandas as pd
 import streamlit as st
 import requests
 import pickle
-
 url = "https://github.com/ezekielmose/Stroke_Prediction_Model/blob/main/strock_model.sav"
-
-
 loaded_model = requests.get(url)
-
-
 #save the loaded model to a tempolary file
-
 with open("strock_model.sav", 'wb') as f:
     pickle.dump(loaded_model, f)
     #pickle.dump(loaded_model, f)
-
-    #f.write(loaded_model.content)
-    
+    #f.write(loaded_model.content)   
 # loading the saved model from the tempolary file
-
-with open("strock_model.sav", 'rb') as f:
-    
+with open("strock_model.sav", 'rb') as f: 
     loaded_model = pickle.load(f)
-    
 def strock_predictor (input_data):
-    
    input_data_to_array =  np.array(input_data)
-      
    input_data_reshaped = input_data_to_array.reshape(1, -1)
-   
-   prediction = loaded_model.predict(input_data_reshaped)
-   
-   
-   
+   prediction = loaded_model.predict(input_data_reshaped)   
    if prediction [0]==0:
-       print("The patient is not at risk")
-       
+       print("The patient is not at risk") 
    else:
         print("The patient is most likely to suffer from strock")
-                
-        
 def main():
     st.title ("Stroke Prediction Model")
-    
     gender = st.text_input("What is the Gender (0 - Female and 1 - male)")
     age = st.text_input("Enter the age")
     hypertension = st.text_input(" Hypertension 0 for -ve and 1 for +ve")
@@ -61,20 +33,10 @@ def main():
     avg_glucose_level = ("Enter any value of (avg_glucose_level) as per the measurements")
     bmi =st.text_input ("Enter any value of (BMI) as per the measurements")
     smoking_status =st.text_input("Smoking_status 0 for never smoked, 1 for Unknown, 2 for formerly smoked, 3 for smokes")
- 					
-   
-   
     diagnosis1 = ""
-    
-    
     if st.button ("CLICK HERE TO PREDICT"):
-        diagnosis1 = strock_predictor ([gender, age, hypertension, heart_disease, ever_married, work_type, Residence_type, avg_glucose_level, bmi,smoking_status])
-        
-    st.success(diagnosis1)
-    
-    
-    
-# this is to allow our web app to run from anaconda command prompt where the cmd takes the main() only and runs the code
-    
+        diagnosis1 = strock_predictor ([gender, age, hypertension, heart_disease, ever_married, work_type, Residence_type, avg_glucose_level, bmi,smoking_status])   
+    st.success(diagnosis1) 
+# this is to allow our web app to run from anaconda command prompt where the cmd takes the main() only and runs the code   
 if __name__ == '__main__':
     main()
